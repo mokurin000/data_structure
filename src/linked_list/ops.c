@@ -130,9 +130,7 @@ unsigned clean(LinkedList* const list, int (*release)(Item* const)) {
         head = next;
     }
 
-    list->len = 0;
-    list->head = NULL;
-    list->tail = NULL;
+    *list = new_list();
     return count;
 }
 
