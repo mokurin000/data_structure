@@ -48,9 +48,10 @@ LinkedList substruct(const LinkedList base, const LinkedList diff);
 // split base into two `LinkedList`, former with false ones, latter with true
 // ones. drop such values if corresponding list is NULL
 void partition(const LinkedList base,
-               bool (*condition)(const Item* const),
+               bool (*condition)(const Item* const, void * const bound),
                LinkedList* const left,
-               LinkedList* const right);
+               LinkedList* const right,
+               void * const bound);
 
 // return the first node has maximium value in list
 Node* max_in(const LinkedList list,
