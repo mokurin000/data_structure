@@ -1,7 +1,8 @@
 # VSCode config
 .vscode
 
-# CMake Build Cache
+# XMake Build Cache
+.xmake
 build
 
 # clangd cache

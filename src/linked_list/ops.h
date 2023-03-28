@@ -15,17 +15,21 @@ LinkedList new_list();
 // 'next' of this node to NULL
 Node* new_node();
 
-// appends item beside `base`
-// return -1 on failures, 0 otherwise.
+// appends item after `base`
+// return negatives on failures, 0 otherwise.
 int push(LinkedList* const list, Node* const base, const Item* const item);
+
+// appends item upon `base`
+// return negatives on failures, 0 otherwise.
+int insert(LinkedList* const list, Node* const base, const Item* const item);
 
 // appends Node to the end of list
 // return -1 on failures, 0 otherwise.
-int push_back(LinkedList* const list, const Item* const item);
+int push_tail(LinkedList* const list, const Item* const item);
 
 // appends Node to the head of list
 // return -1 on failures, 0 otherwise.
-int push_head(LinkedList* const list, const Item* const item);
+int insert_head(LinkedList* const list, const Item* const item);
 
 // remove all elements in list, and call custom resource release
 // function if it's not NULL
@@ -48,10 +52,9 @@ LinkedList substruct(const LinkedList base, const LinkedList diff);
 // split base into two `LinkedList`, former with false ones, latter with true
 // ones. drop such values if corresponding list is NULL
 void partition(const LinkedList base,
-               bool (*condition)(const Item* const, void * const bound),
-               LinkedList* const left,
-               LinkedList* const right,
-               void * const bound);
+               bool (*condition)(const Item* const, void* const bound),
+               LinkedList* const left, LinkedList* const right,
+               void* const bound);
 
 // return the first node has maximium value in list
 Node* max_in(const LinkedList list,
@@ -60,8 +63,7 @@ Node* max_in(const LinkedList list,
 void reverse_in_place(LinkedList* const list);
 
 // returns immediately if target is NULL.
-void drain(const LinkedList base,
-           LinkedList* const target,
+void drain(const LinkedList base, LinkedList* const target,
            bool (*condition)(const Item* const));
 
 #endif
