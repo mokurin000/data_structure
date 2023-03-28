@@ -1,6 +1,0 @@
-[
-{
-  "directory": "/home/poly/Source/data_structure",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-O3", "-std=c2x", "-DNDEBUG", "-o", "build/.objs/data_structure/linux/x86_64/release/src/main.c.o", "src/main.c"],
-  "file": "src/main.c"
-}]

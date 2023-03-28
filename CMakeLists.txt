@@ -2,8 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(data_structure VERSION 1.0.0)
 
-# 指定 C 标准为 C99
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 23)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
 # 设置头文件搜索路径
@@ -19,3 +18,4 @@ add_executable(${PROJECT_NAME} "${PROJECT_SOURCE_DIR}/src/main.c")
 
 # 设置项目作者信息
 set(CPACK_PACKAGE_VENDOR "poly000")
+set(CPACK_RESOURCE_FILE_LICENSE "LICENSE")

@@ -1,8 +1,5 @@
-# Xmake cache
-.xmake/
-build/
+# VSCode config
+.vscode
 
-# MacOS Cache
-.DS_Store
-
-
+# CMake Build Cache
+build
