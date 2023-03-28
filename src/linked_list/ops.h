@@ -1,10 +1,10 @@
+#include <stdlib.h>
+
 #ifndef _LINKED_LIST_OPTS
 #define _LINKED_LIST_OPTS
 
 // core data structures
 #include "type.h"
-
-#include <stdlib.h>
 
 // return a empty LinkedList
 LinkedList new_list();
@@ -14,6 +14,26 @@ LinkedList new_list();
 // note that it will leave item uninitialized, and set
 // 'next' of this node to NULL
 Node* new_node();
+
+// appends item beside `base`
+// return -1 on failures, 0 otherwise.
+int push(LinkedList* const list, Node* const base, const Item* const item);
+
+// appends Node to the end of list
+// return -1 on failures, 0 otherwise.
+int push_back(LinkedList* const list, const Item* const item);
+
+// appends Node to the head of list
+// return -1 on failures, 0 otherwise.
+int push_head(LinkedList* const list, const Item* const item);
+
+// remove all elements in list, and call custom resource release
+// function if it's not NULL
+// return 0 if all items are dropped successfully, or positive integer means
+// amount of failures if occured
+//
+// release should return 0 on success
+unsigned clean(LinkedList* const list, int (*release)(Item* const));
 
 // merge two ascending linkedlist to `dest`
 // elements of dest will be unique
@@ -42,9 +62,5 @@ void reverse_in_place(LinkedList* const list);
 void drain(const LinkedList base,
            LinkedList* const target,
            bool (*condition)(const Item* const));
-
-// remove all elements in list, and call custom resource release
-// function if it's not NULL
-void clean(LinkedList* const list, void (*release)(Item* const));
 
 #endif

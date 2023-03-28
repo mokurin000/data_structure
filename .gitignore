@@ -3,3 +3,6 @@
 
 # CMake Build Cache
 build
+
+# clangd cache
+.cache
